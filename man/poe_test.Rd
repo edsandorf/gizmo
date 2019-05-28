@@ -2,7 +2,7 @@
 % Please edit documentation in R/poe_test.R
 \name{poe_test}
 \alias{poe_test}
-\title{A "bootstrapping" implementation of the Poe et al. (2005) test}
+\title{A bootstrapping implementation of the Poe et al. (2005) test}
 \usage{
 poe_test(x, y, R = 100, N = 10)
 }
@@ -15,22 +15,18 @@ poe_test(x, y, R = 100, N = 10)
 
 \item{N}{An integer specifying the size of the samples drawn from the vectors X and Y. Defaults to 10}
 }
-\value{
-None
-}
 \description{
 This is a "bootstrapping" implementation of the Poe et al. test for difference in empirical distributions.
 Often the vectors for which we want to test for difference are large and as such the complete combinatorial
 might be infeasible to calculate. This function runs the complete combinatorial on a large number of smaller
 sample vectors and returns the average proportion the difference is less than zero (i.e. a one-sided test).
 }
-\details{
-Poe G. L., Giraud, K. L. & Loomis, J. B., 2005, Computational methods for measuring the difference of empirical distributions, American Journal of Agricultural Economics, 87:353-365
-}
 \examples{
-#    Create vectors
 x <- qnorm(runif(100), mean = -0.5, sd = 1)
 y <- qnorm(runif(100), mean = 1.5, sd = 2)
 poe_test(x, y)
 
+}
+\references{
+Poe G. L., Giraud, K. L. & Loomis, J. B., 2005, Computational methods for measuring the difference of empirical distributions, American Journal of Agricultural Economics, 87:353-365
 }
