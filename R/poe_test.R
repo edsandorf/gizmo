@@ -1,18 +1,17 @@
-#' A "bootstrapping" implementation of the Poe et al. (2005) test
+#' A bootstrapping implementation of the Poe et al. (2005) test
 #'
 #' This is a "bootstrapping" implementation of the Poe et al. test for difference in empirical distributions.
 #' Often the vectors for which we want to test for difference are large and as such the complete combinatorial
 #' might be infeasible to calculate. This function runs the complete combinatorial on a large number of smaller
 #' sample vectors and returns the average proportion the difference is less than zero (i.e. a one-sided test).
 #' 
-#' Poe G. L., Giraud, K. L. & Loomis, J. B., 2005, Computational methods for measuring the difference of empirical distributions, American Journal of Agricultural Economics, 87:353-365
-#' 
 #' @param x An input vector
 #' @param y An input vector
 #' @param R An integer specifying the number of replicates. Defaults to 100
 #' @param N An integer specifying the size of the samples drawn from the vectors X and Y. Defaults to 10
 #' 
-#' @return None
+#' @references 
+#' Poe G. L., Giraud, K. L. & Loomis, J. B., 2005, Computational methods for measuring the difference of empirical distributions, American Journal of Agricultural Economics, 87:353-365
 #' 
 #' @examples 
 #' x <- qnorm(runif(100), mean = -0.5, sd = 1)
