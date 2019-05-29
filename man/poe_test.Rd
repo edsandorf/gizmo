@@ -2,24 +2,21 @@
 % Please edit documentation in R/poe_test.R
 \name{poe_test}
 \alias{poe_test}
-\title{A bootstrapping implementation of the Poe et al. (2005) test}
+\title{An implementation of the Poe et al. (2005) test}
 \usage{
-poe_test(x, y, R = 100, N = 10)
+poe_test(x, y)
 }
 \arguments{
 \item{x}{An input vector}
 
 \item{y}{An input vector}
-
-\item{R}{An integer specifying the number of replicates. Defaults to 100}
-
-\item{N}{An integer specifying the size of the samples drawn from the vectors X and Y. Defaults to 10}
+}
+\value{
+A numeric test value
 }
 \description{
-This is a "bootstrapping" implementation of the Poe et al. test for difference in empirical distributions.
-Often the vectors for which we want to test for difference are large and as such the complete combinatorial
-might be infeasible to calculate. This function runs the complete combinatorial on a large number of smaller
-sample vectors and returns the average proportion the difference is less than zero (i.e. a one-sided test).
+The function calculates the complete combinatorial of the supplied vectors using
+a loop implementation.
 }
 \examples{
 x <- qnorm(runif(100), mean = -0.5, sd = 1)
