@@ -7,7 +7,7 @@
 #' 
 #' @export
 
-load_packages <- function(packages){
+load_packages <- function(packages) {
     invisible(lapply(packages, require, character.only = TRUE))
 }
 
@@ -17,11 +17,12 @@ load_packages <- function(packages){
 #' 
 #' @param packages A string of length >= 1 of package names.
 #' 
-#' @return TRUE if all packages are loaded and FALSE if one or more of the packages are not loaded.
+#' @return TRUE if all packages are loaded and FALSE if one or 
+#' more of the packages are not loaded.
 #' 
 #' @export
 
-is_package_loaded <- function(packages){
+is_package_loaded <- function(packages) {
     all(packages %in% .packages())
 }
 

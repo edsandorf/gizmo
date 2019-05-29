@@ -10,7 +10,8 @@ is_package_loaded(packages)
 \item{packages}{A string of length >= 1 of package names.}
 }
 \value{
-TRUE if all packages are loaded and FALSE if one or more of the packages are not loaded.
+TRUE if all packages are loaded and FALSE if one or 
+more of the packages are not loaded.
 }
 \description{
 A simple check to see whether a package is loaded.

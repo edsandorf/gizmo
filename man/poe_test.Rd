@@ -15,8 +15,8 @@ poe_test(x, y)
 A numeric test value
 }
 \description{
-The function calculates the complete combinatorial of the supplied vectors using
-a loop implementation.
+The function calculates the complete combinatorial of the supplied vectors
+using a loop implementation.
 }
 \examples{
 x <- qnorm(runif(100), mean = -0.5, sd = 1)
@@ -25,5 +25,7 @@ poe_test(x, y)
 
 }
 \references{
-Poe G. L., Giraud, K. L. & Loomis, J. B., 2005, Computational methods for measuring the difference of empirical distributions, American Journal of Agricultural Economics, 87:353-365
+Poe G. L., Giraud, K. L. & Loomis, J. B., 2005, Computational methods for 
+measuring the difference of empirical distributions, American Journal of
+ Agricultural Economics, 87:353-365
 }
