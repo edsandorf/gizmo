@@ -17,4 +17,5 @@ x <- qnorm(runif(100), mean = -0.5, sd = 1)
 y <- qnorm(runif(100), mean = 1.5, sd = 2)
 test_stat <- poe_test(x, y)
 summary_poe_test(test_stat)
+
 }

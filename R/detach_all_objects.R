@@ -4,6 +4,10 @@
 #' a simple rewrite of a function available through the codes provided by
 #' the Choice Modeling Centre in Leeds.
 #' 
+#' @examples
+#' detach_all_objects()
+#' 
+#' @export
 
 detach_all_objects <- function(){
     #   Create a subsetting vector to avoid detaching important objects
