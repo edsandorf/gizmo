@@ -4,11 +4,18 @@
 #' character string.
 #' 
 #' @param packages A string of length >= 1 of package names. 
+#' @param silent A boolean. If TRUE suppresses package loading messages. Default
+#' FALSE.
 #' 
 #' @export
 
-load_packages <- function(packages) {
-    invisible(lapply(packages, require, character.only = TRUE))
+load_packages <- function(packages, silent = FALSE) {
+    if (silent) {
+        invisible(suppressMessages(lapply(packages, require,
+                                          character.only = TRUE)))
+    } else {
+        invisible(lapply(packages, require, character.only = TRUE))   
+    }
 }
 
 #' Check whether a package is loaded

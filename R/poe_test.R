@@ -40,7 +40,7 @@ poe_test <- function(x, y){
 #' 
 #' @param x An estimate obtained from \code{\link{poe_test}}.
 #'
-#'@examples
+#' @examples
 #' x <- qnorm(runif(100), mean = -0.5, sd = 1)
 #' y <- qnorm(runif(100), mean = 1.5, sd = 2)
 #' test_stat <- poe_test(x, y)
@@ -48,7 +48,7 @@ poe_test <- function(x, y){
 #' 
 #' @export
 
-print_poe_test <- function(x){
+summary_poe_test <- function(x){
     cat("Gamma: ", x, "\n")
     cat("Gamma >.95 and <.05 indicates difference at the 5% level.")
 }
