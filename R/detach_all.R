@@ -5,11 +5,11 @@
 #' the Choice Modeling Centre in Leeds.
 #' 
 #' @examples
-#' detach_all_objects()
+#' detach_all()
 #' 
 #' @export
 
-detach_all_objects <- function() {
+detach_all <- function() {
     subset_environment <- substring(search(), 1L, 8L) != "package:" &
         search() != ".GlobalEnv" & search() != "Autoloads" & 
         search() != "CheckExEnv" & search() != "tools:rstudio" &
