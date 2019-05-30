@@ -36,7 +36,7 @@ poe_test <- function(x, y){
     return(sum(n_diff) / N^2)
 }
 
-#' Function for printing the poe_test to the console
+#' Summary function for poe_test()
 #' 
 #' @param x An estimate obtained from \code{\link{poe_test}}.
 #'
@@ -44,7 +44,7 @@ poe_test <- function(x, y){
 #' x <- qnorm(runif(100), mean = -0.5, sd = 1)
 #' y <- qnorm(runif(100), mean = 1.5, sd = 2)
 #' test_stat <- poe_test(x, y)
-#' print_poe_test(test_stat)
+#' summary_poe_test(test_stat)
 #' 
 #' @export
 

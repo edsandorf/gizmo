@@ -4,10 +4,13 @@
 \alias{load_packages}
 \title{Load multiple packages}
 \usage{
-load_packages(packages)
+load_packages(packages, silent = FALSE)
 }
 \arguments{
 \item{packages}{A string of length >= 1 of package names.}
+
+\item{silent}{A boolean. If TRUE suppresses package loading messages. Default
+FALSE.}
 }
 \description{
 A wrapper function to quickly load multiple packages passed as a 
