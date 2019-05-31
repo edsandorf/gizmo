@@ -2,7 +2,7 @@
 % Please edit documentation in R/poe_test.R
 \name{poe_test}
 \alias{poe_test}
-\title{An implementation of the Poe et al. (2005) test}
+\title{Test for the difference in empirical distributions}
 \usage{
 poe_test(x, y)
 }
@@ -16,7 +16,9 @@ A numeric test value
 }
 \description{
 The function calculates the complete combinatorial of the supplied vectors
-using a loop implementation.
+using a loop implementation by taking the difference between every 
+combination of the elements in the vectors. The input vectors must 
+be numeric, but can be of different lengths.
 }
 \examples{
 x <- qnorm(runif(100), mean = -0.5, sd = 1)

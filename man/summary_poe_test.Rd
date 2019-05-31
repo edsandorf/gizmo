@@ -10,7 +10,8 @@ summary_poe_test(x)
 \item{x}{An estimate obtained from \code{\link{poe_test}}.}
 }
 \description{
-Summary function for poe_test()
+The function prints a more descriptive output to the console with the result
+of the test for difference in empirical distributions.
 }
 \examples{
 x <- qnorm(runif(100), mean = -0.5, sd = 1)

@@ -1,7 +1,9 @@
-#' An implementation of the Poe et al. (2005) test
+#' Test for the difference in empirical distributions
 #'
 #' The function calculates the complete combinatorial of the supplied vectors
-#' using a loop implementation. 
+#' using a loop implementation by taking the difference between every 
+#' combination of the elements in the vectors. The input vectors must 
+#' be numeric, but can be of different lengths.
 #' 
 #' @param x An input vector
 #' @param y An input vector
@@ -23,20 +25,23 @@
 poe_test <- function(x, y){
     if (!is.numeric(x)) stop("X must be numeric.")
     if (!is.numeric(y)) stop("Y must be numeric.")
-    if (length(x) != length(y)) stop("The vectors should be of the same length")
     
-    N <- length(x)
+    n_x <- length(x)
+    n_y <- length(y)
     
     #   Preallocate space to speed up looping
-    n_diff <- rep(NA, N)
-    for (n in seq_len(N)){
-        n_diff[n] <- sum(x[n] - y < 0)
+    v_diff <- rep(NA, n_x)
+    for (n in seq_len(n_x)){
+        v_diff[n] <- sum(x[n] - y < 0)
     }
     
-    return(sum(n_diff) / N^2)
+    return(sum(v_diff) / (n_x * n_y))
 }
 
 #' Summary function for poe_test()
+#' 
+#' The function prints a more descriptive output to the console with the result
+#' of the test for difference in empirical distributions.
 #' 
 #' @param x An estimate obtained from \code{\link{poe_test}}.
 #'
