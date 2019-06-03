@@ -24,14 +24,14 @@
 #' plot_1 <- ggplot(data = df) + geom_point(aes(x = x, y = y))
 #' plot_2 <- ggplot(data = df) + geom_point(aes(x = x, y = z))
 #' 
-#' multiplot(plot_1, plot_2)
-#' multiplot(plot_1, plot_2, columns = 2)
-#' multiplot(plot_list = list(plot_1, plot_2))
+#' plot_multiple(plot_1, plot_2)
+#' plot_multiple(plot_1, plot_2, columns = 2)
+#' plot_multiple(plot_list = list(plot_1, plot_2))
 #' 
 #' @export
 
-multiplot <- function(..., plot_list = NULL, columns = 1,
-                      by_row = FALSE, layout_matrix = NULL) {
+plot_multiple <- function(..., plot_list = NULL, columns = 1,
+                          by_row = FALSE, layout_matrix = NULL) {
   
   plot_list <- c(list(...), plot_list)
   
@@ -57,7 +57,7 @@ multiplot <- function(..., plot_list = NULL, columns = 1,
     for (i in seq_len(num_plots)) {
       match_index <- as.data.frame(which(layout_matrix == i, arr.ind = TRUE))
       print(plot_list[[i]], vp = grid::viewport(layout.pos.row = match_index$row,
-                                            layout.pos.col = match_index$col))
+                                                layout.pos.col = match_index$col))
     }
   }
 }
