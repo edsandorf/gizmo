@@ -32,7 +32,7 @@
 
 plot_multiple <- function(..., plot_list = NULL, columns = 1,
                           by_row = FALSE, layout_matrix = NULL) {
-  
+
   plot_list <- c(list(...), plot_list)
   
   num_plots <- length(plot_list)
