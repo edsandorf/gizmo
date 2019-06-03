@@ -3,6 +3,6 @@
 export(detach_all)
 export(is_package_loaded)
 export(load_packages)
-export(multiplot)
+export(multi_plot)
 export(poe_test)
 export(summary_poe_test)

@@ -24,13 +24,13 @@
 #' plot_1 <- ggplot(data = df) + geom_point(aes(x = x, y = y))
 #' plot_2 <- ggplot(data = df) + geom_point(aes(x = x, y = z))
 #' 
-#' multiplot(plot_1, plot_2)
-#' multiplot(plot_1, plot_2, columns = 2)
-#' multiplot(plot_list = list(plot_1, plot_2))
+#' multi_plot(plot_1, plot_2)
+#' multi_plot(plot_1, plot_2, columns = 2)
+#' multi_plot(plot_list = list(plot_1, plot_2))
 #' 
 #' @export
 
-multiplot <- function(..., plot_list = NULL, columns = 1,
+multi_plot <- function(..., plot_list = NULL, columns = 1,
                       by_row = FALSE, layout_matrix = NULL) {
   
   plot_list <- c(list(...), plot_list)
