@@ -12,6 +12,6 @@
     
     packageStartupMessage("Thank you for using gizmo! \n\n",
                           "You are currently using version: ", pkg_version, "\n\n",
-                          "To access the latest version, please run",
+                          "To access the latest version, please run \n",
                           "devtools::install_github('edsandorf/gizmo') \n\n")
 }
