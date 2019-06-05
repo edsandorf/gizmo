@@ -8,10 +8,16 @@
 #' @return Nothing
 
 .onAttach <- function(libname, pkgname){
-    pkg_version <- utils::packageDescription("gizmo", fields = "Version")
+    installed_version <- utils::packageDescription("gizmo", fields = "Version")
+    
+    x <- readLines(paste0("https://raw.githubusercontent.com/",
+                          "edsandorf/gizmo", "/master/DESCRIPTION"))
+    remote_version <- gsub("Version:\\s*", "", x[grep('Version:', x)])
     
     packageStartupMessage("Thank you for using gizmo! \n\n",
-                          "You are currently using version: ", pkg_version, "\n\n",
+                          "You are currently using version: ",
+                          installed_version, "\n\n",
+                          "The latest version is: ", remote_version, "\n\n",
                           "To access the latest version, please run \n",
                           "devtools::install_github('edsandorf/gizmo') \n\n")
 }
