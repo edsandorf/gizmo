@@ -11,7 +11,7 @@
     installed_version <- utils::packageDescription("gizmo", fields = "Version")
     
     description <- readLines("https://raw.githubusercontent.com/edsandorf/gizmo/master/DESCRIPTION")
-    remote_version <- gsub("Version:\\s*", "", description[grep('Version:', x)])
+    remote_version <- gsub("Version:\\s*", "", description[grep('Version:', description)])
     
     packageStartupMessage("Thank you for using gizmo! \n\n",
                           "You are currently using version: ",
