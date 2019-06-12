@@ -13,6 +13,9 @@ Depends: R (>= 3.1.0)
 Imports: 
   stringr
 Suggests: 
-  testthat,
-  tibble,
-  ggplot2
+    testthat,
+    tibble,
+    ggplot2,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
