@@ -14,7 +14,7 @@ install_common_packages <- function() {
     "carthography", "sf", "AER", "car", "psych", "MatchIt",
     "knitr", "komadown", "xtable", "tikzDevice", "formatR",
     "swirl", "microbenchmark", "installr", "fortune", "beepr",
-    "lintr", "crayon")
+    "lintr", "crayon", "pillar")
   
   utils::install.packages(packages, repos = "https://cloud.r-project.org")
 }
