@@ -3,6 +3,7 @@
 export(detach_all)
 export(install_common_packages)
 export(is_package_loaded)
+export(last)
 export(load_packages)
 export(plot_multiple)
 export(poe_test)
