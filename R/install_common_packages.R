@@ -5,7 +5,7 @@
 #' 
 #' @export
 
-install_common_packages <- function() {
+install_common_packages <- function () {
   packages <- c("devtools", "packrat", "rsconnect", "config", "roxygen2",
     "testthat", "tidyverse", "pryr", "feather", "shiny", "shinyjs",
     "shinyWidgets", "aws.s3", "RMariaDB", "janitor", "data.table",

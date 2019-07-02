@@ -22,20 +22,20 @@
 #' 
 #' @export
 
-poe_test <- function(x, y){
-    if (!is.numeric(x)) stop("X must be numeric.")
-    if (!is.numeric(y)) stop("Y must be numeric.")
-    
-    n_x <- length(x)
-    n_y <- length(y)
-    
-    #   Preallocate space to speed up looping
-    v_diff <- rep(NA, n_x)
-    for (n in seq_len(n_x)){
-        v_diff[n] <- sum(x[n] - y < 0)
-    }
-    
-    return(sum(v_diff) / (n_x * n_y))
+poe_test <- function (x, y) {
+  if (!is.numeric(x)) stop("X must be numeric.")
+  if (!is.numeric(y)) stop("Y must be numeric.")
+  
+  n_x <- length(x)
+  n_y <- length(y)
+  
+  # Preallocate space to speed up looping
+  v_diff <- rep(NA, n_x)
+  for (n in seq_len(n_x)){
+    v_diff[n] <- sum(x[n] - y < 0)
+  }
+  
+  return(sum(v_diff) / (n_x * n_y))
 }
 
 #' Summary function for poe_test()
@@ -53,7 +53,7 @@ poe_test <- function(x, y){
 #' 
 #' @export
 
-summary_poe_test <- function(x){
-    cat("Gamma: ", x, "\n")
-    cat("Gamma >.95 and <.05 indicates difference at the 5% level.")
+summary_poe_test <- function (x) {
+  cat("Gamma: ", x, "\n")
+  cat("Gamma >.95 and <.05 indicates difference at the 5% level.")
 }
