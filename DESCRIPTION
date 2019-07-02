@@ -1,7 +1,7 @@
 Package: gizmo
 Type: Package
 Title: A collection of useful tools
-Version: 0.0.1.1
+Version: 0.0.1.2
 Authors@R: person("Erlend", "Dancke Sandorf", email = "e.d.sandorf@stir.ac.uk", role = c("aut", "cre"))
 Maintainer: Erlend Dancke Sandorf <e.d.sandorf@stir.ac.uk>
 Description: Gizmo is a collection of useful tools and functions for general statistical analysis and choice modeling. These are functions that I use relatively frequently. Collecting them all in one handy package is useful to me, and it is my hope that others find them useful too.
