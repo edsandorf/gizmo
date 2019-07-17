@@ -1,5 +1,12 @@
-# gizmo
-Gizmo is a collection of useful tools and functions for statistical analysis and choice modeling in R.
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/edsandorf/gizmo.svg?branch=master)](https://travis-ci.org/edsandorf/gizmo)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/gizmo)](https://cran.r-project.org/package=gizmo)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/gizmo)](http://www.r-pkg.org/pkg/gizmo)
+<!-- badges: end -->
+
+# gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis
+
+All the useful utility functions and tests in one convenient place. Gizmo contains a set of utilities and tests that I use frequently in my own work.
 
 # Installing "gizmo"
 The package can be install from Github `devtools::install_github("edsandorf/gizmo")`
@@ -19,9 +26,9 @@ This list is based on a great post on [how to contribute](https://akrabat.com/th
 In order keep everything readable and maintainable, please adhere to the code style. For details, please see the [R chapter](http://r-pkgs.had.co.nz/r.html) of 'R packages' by Hadley Wickham.
 
 # How to cite gizmo?
-Please cite as: Sandorf, E. D., 2019, gizmo: Useful tools and functions for statistical analysis and choice modeling in R, v. x.x.x.x, https://github.com/edsandorf/gizmo
+Please cite as: Sandorf, E. D., 2019, gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis, https://github.com/edsandorf/gizmo
 
-where x.x.x.x is replaced by the version number of the package used
+
 
 
 
