@@ -1,5 +1,5 @@
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/edsandorf/gizmo.svg?branch=master)](https://travis-ci.org/edsandorf/gizmo)
+[![Travis build status](https://travis-ci.com/edsandorf/gizmo.svg?branch=master)](https://travis-ci.org/edsandorf/gizmo)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/gizmo)](https://cran.r-project.org/package=gizmo)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/gizmo)](http://www.r-pkg.org/pkg/gizmo)
 <!-- badges: end -->
@@ -26,7 +26,8 @@ This list is based on a great post on [how to contribute](https://akrabat.com/th
 In order keep everything readable and maintainable, please adhere to the code style. For details, please see the [R chapter](http://r-pkgs.had.co.nz/r.html) of 'R packages' by Hadley Wickham.
 
 # How to cite gizmo?
-Please cite as: Sandorf, E. D., 2019, gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis, https://github.com/edsandorf/gizmo
+Please cite as:
+Sandorf, E. D., 2019, gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis, https://github.com/edsandorf/gizmo
 
 
 
