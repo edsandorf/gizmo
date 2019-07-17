@@ -29,5 +29,7 @@
     installed_version, "\n\n",
     "The latest version is: ", remote_version, "\n\n",
     "To access the latest version, please run \n",
-    "devtools::install_github('edsandorf/gizmo') \n\n")
+    "devtools::install_github('edsandorf/gizmo') \n\n",
+    "Please cite as: \n", 
+    "Sandorf, E. D., 2019, gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis, https://github.com/edsandorf/gizmo \n\n")
 }
