@@ -1,10 +1,10 @@
 Package: gizmo
 Type: Package
-Title: A collection of useful tools
+Title: A Collection of Utility Functions for Choice Modeling and Statistical Analysis
 Version: 0.0.2.9000
 Authors@R: person("Erlend", "Dancke Sandorf", email = "e.d.sandorf@stir.ac.uk", role = c("aut", "cre"))
 Maintainer: Erlend Dancke Sandorf <e.d.sandorf@stir.ac.uk>
-Description: Gizmo is a collection of useful tools and functions for general statistical analysis and choice modeling. These are functions that I use relatively frequently. Collecting them all in one handy package is useful to me, and it is my hope that others find them useful too.
+Description: All the useful utility functions and tests in one convenient place. Gizmo contains a set of utilities and tests that I use frequently in my own work.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
