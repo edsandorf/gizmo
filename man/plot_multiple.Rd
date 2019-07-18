@@ -4,21 +4,28 @@
 \alias{plot_multiple}
 \title{Arrange multiple plots in a grid}
 \usage{
-plot_multiple(..., plot_list = NULL, columns = 1, by_row = FALSE,
-  layout_matrix = NULL)
+plot_multiple(..., plots = NULL, cols = 1, by_row = FALSE,
+  layout_matrix = NULL, shared_legend = FALSE, position = c("bottom",
+  "right"))
 }
 \arguments{
 \item{...}{plot objects}
 
-\item{plot_list}{List of plot objects. Defaults to NULL.}
+\item{plots}{List of plot objects. Defaults to NULL.}
 
-\item{columns}{An integer specifying the number of columns. The number of rows
+\item{cols}{An integer specifying the number of columns. The number of rows
 is calculated automatically. Defaults to 1.}
 
 \item{by_row}{If TRUE, the generated layout_matrix is filled by row. Default
 is FALSE.}
 
 \item{layout_matrix}{A layout matrix. Defaults to NULL.}
+
+\item{shared_legend}{If TRUE the plots share the same legend. Defaults to 
+FALSE.}
+
+\item{position}{Position of the shared legend. Can be either "bottom" or
+"right".}
 }
 \description{
 The function takes a list of plots made using ggplot() as input and arranges 
@@ -28,13 +35,19 @@ them in a grid.
 library(ggplot2)
 library(tibble)
 
-df <- tibble(x = seq_len(10), y = runif(10), z = runif(10) * 1.5)
+df <- tibble(x = seq_len(10), y = runif(10), z = runif(10) * 1.5,
+ a = sample(c(0, 1), 10, TRUE))
 plot_1 <- ggplot(data = df) + geom_point(aes(x = x, y = y))
 plot_2 <- ggplot(data = df) + geom_point(aes(x = x, y = z))
 
 plot_multiple(plot_1, plot_2)
-plot_multiple(plot_1, plot_2, columns = 2)
-plot_multiple(plot_list = list(plot_1, plot_2))
+plot_multiple(plot_1, plot_2, cols = 2)
+plot_multiple(plots = list(plot_1, plot_2))
+
+plot_3 <- ggplot(data = df) + geom_point(aes(x = x, y = y, colour = a))
+plot_4 <- ggplot(data = df) + geom_point(aes(x = x, y = z, colour = a))
+plot_multiple(plot_3, plot_4, shared_legend = TRUE, position = "bottom")
+plot_multiple(plot_3, plot_4, shared_legend = TRUE, position = "right")
 
 }
 \references{
