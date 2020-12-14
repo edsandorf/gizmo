@@ -1,7 +1,7 @@
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/edsandorf/gizmo.svg?branch=master)](https://travis-ci.org/edsandorf/gizmo)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/gizmo)](https://cran.r-project.org/package=gizmo)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/gizmo)](http://www.r-pkg.org/pkg/gizmo)
+[![R build status](https://github.com/edsandorf/gizmo/workflows/R-CMD-check/badge.svg)](https://github.com/edsandorf/gizmo/actions)
 <!-- badges: end -->
 
 # gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis
