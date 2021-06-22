@@ -1,10 +1,11 @@
-#' gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis
+#' gizmo: A collection of tools and utils
 #' 
-#' All the useful utility functions and tests in one convenient place. Gizmo 
-#' contains a set of utilities and tests that I use frequently in my own work.
-#' 
-#' @importFrom stats runif
+#' A collection of tools and utility functions useful to my work and 
+#' productivity
 #' 
 #' @docType package
 #' @name gizmo
+#' 
+#' @importFrom stats runif
+#' @importFrom utils browseURL savehistory tail
 NULL

@@ -3,9 +3,8 @@
 \docType{package}
 \name{gizmo}
 \alias{gizmo}
-\alias{gizmo-package}
-\title{gizmo: A Collection of Utility Functions for Choice Modeling and Statistical Analysis}
+\title{gizmo: A collection of tools and utils}
 \description{
-All the useful utility functions and tests in one convenient place. Gizmo 
-contains a set of utilities and tests that I use frequently in my own work.
+A collection of tools and utility functions useful to my work and 
+productivity
 }
