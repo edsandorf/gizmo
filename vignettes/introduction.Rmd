@@ -1,8 +1,8 @@
 ---
-title: "vignette-gizmo"
+title: "Introduction to gizmo"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{vignette-gizmo}
+  %\VignetteIndexEntry{introduction}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
