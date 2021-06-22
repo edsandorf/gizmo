@@ -1,0 +1,9 @@
+year <- 2021
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype = "Manual",
+         title = "{gizmo: A colletion of tools and utils",
+         author = person(c("Erlend", "Dancke"), "Sandorf"),
+         year = year,
+         note = note,
+         url = "https://CRAN.R-project.org/package = gizmo")

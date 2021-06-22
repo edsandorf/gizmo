@@ -1,16 +1,22 @@
 Package: gizmo
 Type: Package
-Title: A Collection of Utility Functions for Choice Modeling and Statistical Analysis
-Version: 0.0.2.9001
-Authors@R: person("Erlend", "Dancke Sandorf", email = "e.d.sandorf@stir.ac.uk", role = c("aut", "cre"))
-Maintainer: Erlend Dancke Sandorf <e.d.sandorf@stir.ac.uk>
-Description: All the useful utility functions and tests in one convenient place. Gizmo contains a set of utilities and tests that I use frequently in my own work.
-License: file LICENSE
+Title: A collection of tools and utility functions
+Version: 0.0.1.9001
+Authors@R: person(
+  "Erlend Dancke",
+  "Sandorf",
+  email = "erlend.dancke.sandorf@nmbu.no",
+  role = c("aut", "cre"))
+Maintainer: Erlend Dancke Sandorf <erlend.dancke.sandorf@nmbu.no>
+Description: A collection of tools and utility functions useful to my workflow and productivity.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Depends: R (>= 3.1.0)
-Imports: 
+Imports:
+  cli,
+  pander,
   stringr,
   ggplot2,
   grid,
