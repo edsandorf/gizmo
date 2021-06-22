@@ -8,7 +8,6 @@
 #' FALSE.
 #' 
 #' @export
-
 load_packages <- function (pkgs, silent = FALSE) {
   if (silent) {
     invisible(suppressMessages(lapply(pkgs, require, character.only = TRUE)))
@@ -27,7 +26,6 @@ load_packages <- function (pkgs, silent = FALSE) {
 #' more of the packages are not loaded.
 #' 
 #' @export
-
 is_package_loaded <- function (pkgs) {
   all(pkgs %in% .packages())
 }

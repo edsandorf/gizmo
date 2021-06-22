@@ -4,9 +4,15 @@
 \alias{plot_multiple}
 \title{Arrange multiple plots in a grid}
 \usage{
-plot_multiple(..., plots = NULL, cols = 1, by_row = FALSE,
-  layout_matrix = NULL, shared_legend = FALSE, position = c("bottom",
-  "right"))
+plot_multiple(
+  ...,
+  plots = NULL,
+  cols = 1,
+  by_row = FALSE,
+  layout_matrix = NULL,
+  shared_legend = FALSE,
+  position = c("bottom", "right")
+)
 }
 \arguments{
 \item{...}{plot objects}
