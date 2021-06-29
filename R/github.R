@@ -2,21 +2,19 @@
 #'
 #' @param user A character string giving the user 
 #' @param repo A character string giving the repository
-#'
+#' @param branch A character string giving the branch in the repository
+#' 
 #' @return A vector with the list of files contained in the repository
 #' 
 #' @export
-github_repo_file_list <- function(user, repo) {
-  # Get the Github default branch
-  default_branch <- github_default_branch(user, repo)
-  
+github_repo_file_list <- function(user, repo, branch) {
   # Define the API url
   url_repo <- paste(
     "https://api.github.com/repos",
     user,
     repo,
     "git/trees",
-    default_branch,
+    branch,
     sep = "/"
   )
   
@@ -68,4 +66,39 @@ github_api_info <- function(user, repo) {
   
   api_info <- shell(command, intern = TRUE)
   return(api_info)
+}
+
+#' Download Github Director
+#'
+#' @param file_list A vector of files 
+#' @inheritParams github_repo_file_list
+#' 
+#' @return NULL
+#' 
+#' @export
+github_download_files <- function(file_list,
+                                  user,
+                                  repo,
+                                  branch) {
+  # Create the source paths
+  source_path <- paste(
+    "https://github.com",
+    user,
+    repo,
+    "raw",
+    branch,
+    file_list,
+    sep = "/"
+  )
+  
+  # Create the destination paths - NOTE: No checks yet.
+  destination_path <- file.path(getwd(), file_list)
+  
+  # Loop over elements in the source path
+  for (i in seq_along(source_path)) {
+    utils::download.file(source_path[[i]], destination_path[[i]])
+  }
+  
+  # No return from the function
+  return(NULL)
 }

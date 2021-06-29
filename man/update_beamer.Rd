@@ -4,10 +4,14 @@
 \alias{update_beamer}
 \title{Updates the Beamer template}
 \usage{
-update_beamer(theme = "nmbu")
+update_beamer(theme = "nmbu", user = "edsandorf", repo = "latex-templates")
 }
 \arguments{
 \item{theme}{A character string giving the name of the Beamer theme}
+
+\item{user}{A character string giving the user}
+
+\item{repo}{A character string giving the repository}
 }
 \description{
 The function updates the Beamer templates in the current working directory

@@ -4,9 +4,12 @@
 #' renames it to 'presentation'
 #'
 #' @param theme A character string giving the name of the Beamer theme
-#'
+#' @inheritParams github_repo_file_list
+#' 
 #' @export
-setup_beamer <- function(theme = "nmbu") {
+setup_beamer <- function(theme = "nmbu",
+                         user = "edsandorf",
+                         repo = "latex-templates") {
   # Check if already exists
   if (dir.exists(file.path(getwd(), "presentations"))) {
     stop("Beamer has already been set up for this project. To update the theme
@@ -17,7 +20,7 @@ setup_beamer <- function(theme = "nmbu") {
   beamer_theme <- paste0("beamer-", theme)
   
   # Download the Beamer template 
-  invisible(download_beamer(beamer_theme))
+  invisible(download_beamer(beamer_theme, user, repo))
   
   # Rename folder
   rename_dir(beamer_theme, "presentations")
@@ -29,9 +32,12 @@ setup_beamer <- function(theme = "nmbu") {
 #' and all sub-directories recursively.
 #' 
 #' @inheritParams setup_beamer
+#' @inheritParams github_repo_file_list
 #' 
 #' @export
-update_beamer <- function(theme = "nmbu") {
+update_beamer <- function(theme = "nmbu",
+                          user = "edsandorf",
+                          repo = "latex-templates") {
   # Define useful variables
   beamer_theme <- paste0("beamer-", theme)
 
@@ -39,7 +45,7 @@ update_beamer <- function(theme = "nmbu") {
   all_files <- list.files(recursive = TRUE)
   
   # Download files (after to avoid also counting these)
-  invisible(download_beamer(beamer_theme))
+  invisible(download_beamer(beamer_theme, user, repo))
   
   # Get the list of files in the beamer folder
   theme_files <- list.files(beamer_theme, recursive = TRUE)
@@ -61,19 +67,21 @@ update_beamer <- function(theme = "nmbu") {
 #' 
 #' @param beamer_theme A character string giving the full name of the Github
 #' folder with the theme to be downloaded.
-download_beamer <- function(beamer_theme) {
+#' @inheritParams github_repo_file_list
+#' 
+#' @return NULL
+download_beamer <- function(beamer_theme,
+                            user, 
+                            repo) {
   # Check if the folder already exists
   if (dir.exists(file.path(getwd(), beamer_theme))) {
     stop("The theme has already been downloaded")
   }
   
   # Get the list of all files in the repository
-  url_latex_templates <- "https://api.github.com/repos/edsandorf/latex-templates/git/trees/main?recursive=1"
-  url_request <- httr::GET(url_latex_templates)
-  httr::stop_for_status(url_request)
-  repo_file_list <- unlist(lapply(httr::content(url_request)$tree, "[", "path"),
-                           use.names = FALSE)
- 
+  default_branch <- github_default_branch(user, repo)
+  repo_file_list <- github_repo_file_list(user, repo, default_branch)
+  
   # Subset to only include the list of files associated with the current theme
   theme_file_list <- grep(paste0(beamer_theme, "/.*\\.(sty|eps|Rmd|jpg)$"),
                           repo_file_list,
@@ -85,12 +93,7 @@ download_beamer <- function(beamer_theme) {
   create_dir(paste0(beamer_theme, "/gfx"))
   
   # Download the files
-  source_url <- paste0("https://github.com/edsandorf/latex-templates/raw/main/",
-                       theme_file_list)
-  dest_path <- file.path(getwd(), theme_file_list)
-  for (i in seq_along(source_url)) {
-    utils::download.file(source_url[[i]], dest_path[[i]])
-  }
+  invisible(github_download_files(theme_file_list, user, repo, default_branch))
   
   # No return from the function
   return(NULL)

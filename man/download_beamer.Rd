@@ -4,11 +4,15 @@
 \alias{download_beamer}
 \title{Download the Beamer template from Github}
 \usage{
-download_beamer(beamer_theme)
+download_beamer(beamer_theme, user, repo)
 }
 \arguments{
 \item{beamer_theme}{A character string giving the full name of the Github
 folder with the theme to be downloaded.}
+
+\item{user}{A character string giving the user}
+
+\item{repo}{A character string giving the repository}
 }
 \description{
 The function downloads all the files from the Github repository into a
