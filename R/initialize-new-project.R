@@ -19,6 +19,8 @@ initialize_new_project <- function(theme = "nmbu", overwrite = FALSE) {
   dirs <- c("data", "models", "outputs")
   lapply(dirs, create_dir, overwrite = TRUE)
   
+  # Setup a models directory (copy example files from Github)
+  
   # Beamer presentations
   beamer <- readline(prompt = "Do you wish to set up the Beamer templates (y/n)?")
   if (tolower(beamer) %in% c("yes", "y")) {
@@ -28,21 +30,4 @@ initialize_new_project <- function(theme = "nmbu", overwrite = FALSE) {
   
   # Print success message
   cli::cli_alert_success("Project sucessfully initialized")
-}
-
-#' Create a directory
-#' 
-#' A wrapper function for creating new directories. Each directory is created
-#' relative to the current working directory.
-#' 
-#' @param string A character string giving the name of the new folder.
-#' @inheritParams initialize_new_project
-#' 
-#' @export
-create_dir <- function(string, overwrite = FALSE) {
-  path <- file.path(getwd(), string)
-  exists <- dir.exists(paths = path)
-  if (!exists || (exists && overwrite)) {
-    dir.create(path, showWarnings = FALSE)
-  }
 }

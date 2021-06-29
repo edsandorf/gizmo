@@ -20,7 +20,7 @@ setup_beamer <- function(theme = "nmbu") {
   invisible(download_beamer(beamer_theme))
   
   # Rename folder
-  rename_folder(beamer_theme, "presentations")
+  rename_dir(beamer_theme, "presentations")
 }
 
 #' Updates the Beamer template
