@@ -3,4 +3,10 @@
 ^cran-comments\.md$
 ^README\.md$
 ^CRAN-RELEASE$
+^docs$
+^examples$
+^Outputs$
+^outputs$
+^_pkgdown\.yml$
+^pkgdown$
 ^\.github$

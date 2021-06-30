@@ -2,18 +2,25 @@
 % Please edit documentation in R/beamer.R
 \name{setup_beamer}
 \alias{setup_beamer}
-\title{Setup Beamer}
+\title{Setup the presentation folder with a Beamer template}
 \usage{
-setup_beamer(theme = "nmbu", user = "edsandorf", repo = "latex-templates")
+setup_beamer(
+  directory = "beamer-nmbu",
+  user = "edsandorf",
+  repo = "latex-templates"
+)
 }
 \arguments{
-\item{theme}{A character string giving the name of the Beamer theme}
+\item{directory}{A character string giving the full name of the Github
+folder with the theme to be downloaded.}
 
 \item{user}{A character string giving the user}
 
 \item{repo}{A character string giving the repository}
 }
 \description{
-Downloads the correct Beamer template folder from my Github repository and
-renames it to 'presentation'
+A wrapper around \code{\link{download_from_github}} to make it easy to 
+download and setup a Beamer presentation within the current project using
+templates from Github. The function downloads the specified template and
+renames it to 'presentation'.
 }

@@ -4,11 +4,9 @@
 \alias{initialize_new_project}
 \title{Initialize a new project}
 \usage{
-initialize_new_project(theme = "nmbu", overwrite = FALSE)
+initialize_new_project(overwrite = FALSE)
 }
 \arguments{
-\item{theme}{A character string giving the name of the Beamer theme}
-
 \item{overwrite}{A boolean equal to TRUE if existing folders and files
 should be overwritten. All warnings are supressed. Default is FALSE.}
 }
