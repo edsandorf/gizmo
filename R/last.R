@@ -24,6 +24,6 @@
 #' 
 #' @export
 
-last <- function (x) {
+last <- function(x) {
   x[length(x)]
 }

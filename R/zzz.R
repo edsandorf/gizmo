@@ -7,7 +7,7 @@
 #' 
 #' @return Nothing
 #' 
-.onAttach <- function (libname, pkgname) {
+.onAttach <- function(libname, pkgname) {
   installed_version <- utils::packageDescription("gizmo", fields = "Version")
   
   description <- tryCatch({
@@ -21,7 +21,8 @@
   if (length(description) == 1) {
     remote_version <- description
   } else {
-    remote_version <- gsub("Version:\\s*", "", description[grep('Version:', description)])    
+    remote_version <- gsub("Version:\\s*", "", description[grep("Version:",
+                                                                description)])    
   }
   
   packageStartupMessage("Thank you for using gizmo! \n\n",

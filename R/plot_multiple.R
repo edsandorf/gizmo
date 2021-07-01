@@ -40,8 +40,13 @@
 #' 
 #' @export
 
-plot_multiple <- function (..., plots = NULL, cols = 1, by_row = FALSE,
-  layout_matrix = NULL, shared_legend = FALSE, position = c("bottom", "right")) {
+plot_multiple <- function(...,
+                          plots = NULL,
+                          cols = 1,
+                          by_row = FALSE,
+                          layout_matrix = NULL,
+                          shared_legend = FALSE,
+                          position = c("bottom", "right")) {
   
   # If plots is not a list then stop
   if (!is.list(plots) && !is.null(plots)) {
@@ -60,7 +65,7 @@ plot_multiple <- function (..., plots = NULL, cols = 1, by_row = FALSE,
   }
   
   # Check if the plots have legends
-  has_legend <- lapply(plots, function (x) {
+  has_legend <- lapply(plots, function(x) {
     any(ggplot2::ggplotGrob(x)$layout$name == "guide-box")
   })
   
@@ -72,20 +77,23 @@ plot_multiple <- function (..., plots = NULL, cols = 1, by_row = FALSE,
       plot_tmp <- plots[[which(do.call(c, has_legend) == TRUE)[1]]]
       grob_tmp <- ggplot2::ggplotGrob(plot_tmp + 
           ggplot2::theme(legend.position = position))$grobs
-      legend <- grob_tmp[[which(sapply(grob_tmp, function (x) x$name) == "guide-box")]]
+      legend <- grob_tmp[[which(sapply(grob_tmp,
+                                       function(x) x$name) == "guide-box")]]
       height <- sum(legend$height)
       width <- sum(legend$width)
       # Set legend to none for all plots
       plot_layout <- lapply(plots,
-        function (x) x + ggplot2::theme(legend.position = "none"))
+        function(x) x + ggplot2::theme(legend.position = "none"))
       plot_layout <- c(plot_layout, nrow = rows, ncol = cols)
       
       plot_legend <- switch(position, 
-        "bottom" = gridExtra::arrangeGrob(do.call(gridExtra::arrangeGrob, plot_layout),
+        "bottom" = gridExtra::arrangeGrob(do.call(gridExtra::arrangeGrob, 
+                                                  plot_layout),
           legend,
           ncol = 1,
           heights = grid::unit.c(grid::unit(1, "npc") - height, height)),
-        "right" = gridExtra::arrangeGrob(do.call(gridExtra::arrangeGrob, plot_layout),
+        "right" = gridExtra::arrangeGrob(do.call(gridExtra::arrangeGrob,
+                                                 plot_layout),
           legend,
           ncol = 2,
           widths = grid::unit.c(grid::unit(1, "npc") - width, width)))

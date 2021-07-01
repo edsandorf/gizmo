@@ -19,7 +19,7 @@ folder with the theme to be downloaded.}
 \item{repo}{A character string giving the repository}
 }
 \description{
-A wrapper around \code{\link{download_from_github}} to make it easy to 
+A wrapper around \code{\link{download_from_github}} to make it easy to
 download and setup a Beamer presentation within the current project using
 templates from Github. The function downloads the specified template and
 renames it to 'presentation'.

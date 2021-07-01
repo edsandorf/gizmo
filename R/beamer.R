@@ -1,14 +1,14 @@
-#' Setup the presentation folder with a Beamer template 
-#' 
-#' A wrapper around \code{\link{download_from_github}} to make it easy to 
+#' Setup the presentation folder with a Beamer template
+#'
+#' A wrapper around \code{\link{download_from_github}} to make it easy to
 #' download and setup a Beamer presentation within the current project using
 #' templates from Github. The function downloads the specified template and
 #' renames it to 'presentation'.
 #'
 #' @inheritParams download_from_github
-#' 
+#'
 #' @return NULL
-#' 
+#'
 #' @export
 setup_beamer <- function(directory = "beamer-nmbu",
                          user = "edsandorf",
@@ -18,13 +18,13 @@ setup_beamer <- function(directory = "beamer-nmbu",
     stop("Beamer has already been set up for this project. To update the theme
          to the newest version, use: update_beamer()")
   }
-  
+
   # Get the list of all files in the repository
   default_branch <- github_default_branch(user, repo)
   
   # Define the file extensions
   file_extensions <- c("sty", "eps", "Rmd", "jpg")
-  
+
   # Download the Beamer template 
   invisible(download_from_github(directory,
                                  user,

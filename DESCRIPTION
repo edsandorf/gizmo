@@ -21,10 +21,11 @@ Imports:
   stringr,
   ggplot2,
   grid,
-  gridExtra
+  gridExtra,
+  rmarkdown,
+  rticles
 Suggests: 
     testthat,
     tibble,
-    knitr,
-    rmarkdown
+    knitr
 VignetteBuilder: knitr
