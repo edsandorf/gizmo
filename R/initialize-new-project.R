@@ -18,13 +18,17 @@ initialize_new_project <- function(overwrite = FALSE) {
   dirs <- c("data", "outputs")
   lapply(dirs, create_dir, overwrite = TRUE)
   
-  # Setup a models directory (copy example files from Github)
-  models <- readline(prompt = "Do you wish to set up the 'models' folder with examples (y/n)?")
-  if (tolower(models) %in% c("yes", "y")) {
-    setup_models(directory = "examples",
-                 user = "edsandorf",
-                 repo = "cmdlR")
+  # Draft
+  drafts <- readline(prompt = "Do you wish to set up a paper draft (y/n)?")
+  if (tolower(drafts) %in% c("yes", "y")) {
+    # Create the presentation directory
+    create_dir("drafts")
+    file_name <- file.path("drafts/draft-authors-title-v01")
+    rmarkdown::draft(file_name, template = "elsevier", package = "rticles",
+                     create_dir = FALSE, edit = FALSE)
+    cli::cli_alert_success("'drafts' folder created")
   }
+  
   
   # Beamer presentations
   beamer <- readline(prompt = "Do you wish to set up the Beamer templates (y/n)?")
@@ -33,6 +37,14 @@ initialize_new_project <- function(overwrite = FALSE) {
     setup_beamer(directory = "beamer-nmbu",
                  user = "edsandorf",
                  repo = "latex-templates")
+  }
+  
+  # Setup a models directory (copy example files from Github)
+  models <- readline(prompt = "Do you wish to set up the 'models' folder with examples (y/n)?")
+  if (tolower(models) %in% c("yes", "y")) {
+    setup_models(directory = "examples",
+                 user = "edsandorf",
+                 repo = "cmdlR")
   }
   
   # Print success message
