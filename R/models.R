@@ -12,7 +12,7 @@
 #' @export
 setup_models <- function(directory = "examples",
                          user = "edsandorf",
-                         repo = "cmdlR") {
+                         repo = "cmdlr") {
   # Check if already exists
   if (dir.exists(file.path(getwd(), "models"))) {
     stop("models has already been set up for this project. To update with the 
@@ -52,7 +52,7 @@ setup_models <- function(directory = "examples",
 #' @export
 update_models <- function(directory = "examples",
                           user = "edsandorf",
-                          repo = "cmdlR") {
+                          repo = "cmdlr") {
   
   # Get the list of all files in the repository
   default_branch <- github_default_branch(user, repo)

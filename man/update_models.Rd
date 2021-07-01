@@ -4,7 +4,7 @@
 \alias{update_models}
 \title{Update the examples in the models folder}
 \usage{
-update_models(directory = "examples", user = "edsandorf", repo = "cmdlR")
+update_models(directory = "examples", user = "edsandorf", repo = "cmdlr")
 }
 \arguments{
 \item{directory}{A character string giving the full name of the Github

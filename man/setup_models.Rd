@@ -4,7 +4,7 @@
 \alias{setup_models}
 \title{Setup models folder}
 \usage{
-setup_models(directory = "examples", user = "edsandorf", repo = "cmdlR")
+setup_models(directory = "examples", user = "edsandorf", repo = "cmdlr")
 }
 \arguments{
 \item{directory}{A character string giving the full name of the Github
