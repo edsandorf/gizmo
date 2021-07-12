@@ -1,0 +1,120 @@
+% NMBU Beamer Theme
+%
+% Description:
+%   A Beamer template consistent with NMBU graphical profile
+%
+% URL: https://design.nmbu.no/artikler/node/2970
+%
+% Author: Erlend Dancke Sandorf
+%
+% Based on: Beamer-NMBU by Eivysaur (https://github.com/Eivysaur/Beamer-NMBU) 
+\mode<presentation>
+
+% ----
+% BACKGROUND
+% ----
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0, 0) rectangle(\the\paperwidth, \the\paperheight);
+    
+    % Set green background for the first slides
+    \ifnum\thepage>0\relax%
+      \fill[color = nmbugreen] (0,0) rectangle (\the\paperwidth, \the\paperheight);
+    \fi
+    
+    % Set the white logo in upper right corner for title page
+    \ifnum\thepage>1\relax%
+      \node[anchor = north east] (logo) at (.88\paperwidth, .83\paperheight){\includegraphics[scale = 0.5]{gfx/nmbu_symbol_wh.eps}};
+    \fi
+    
+    % Set background to white and green logo in upper right corner for the rest of the slides
+    \ifnum\thepage>2\relax%
+      \fill[color = white] (0, 0) rectangle(\the\paperwidth, \the\paperheight);
+      \node[anchor = north east] (logo) at (.88\paperwidth, .83\paperheight){\includegraphics[scale = 0.5]{gfx/nmbu_symbol_green_rgb.eps}};
+    \fi
+  \end{tikzpicture}
+}
+
+% ----
+% TITLEPAGE
+% ----
+\defbeamertemplate*{title page}{NMBU}[1][]{
+  % First page with green logo only
+  \ifnum\thepage=1\relax%
+    \begin{tikzpicture}
+      \useasboundingbox (0, 0) rectangle (\the\paperwidth, \the\paperheight);
+      \node[] (logo) at (0.15\paperwidth, 0.325\paperheight){\includegraphics[scale = 1.3]{gfx/nmbu_logo_eng_white_logo_and_text.eps}};
+    \end{tikzpicture}
+  \fi
+
+  % Title page
+  \ifnum\thepage>1\relax%
+    \vbox{}
+    \vfill
+    \begingroup
+      \centering
+      \vskip1em
+      \begin{beamercolorbox}[sep = 5pt, wd = \paperwidth]{title page header}
+        \usebeamerfont{title}\centering\textbf{\inserttitle}\par%
+        \ifx\insertsubtitle\@empty%
+        \else%
+          \vskip0.25em%
+          {\usebeamerfont{subtitle}\insertsubtitle\par}%
+        \fi%
+      \end{beamercolorbox}     
+      \vskip1em\par
+      \begin{beamercolorbox}[sep = 5pt, wd = \paperwidth]{author}
+        \usebeamerfont{author} \centering\normalsize\insertauthor%
+      \end{beamercolorbox}
+      \begin{beamercolorbox}[sep = 5pt, wd = \paperwidth]{institute}
+        \usebeamerfont{institute}\centering\tiny\insertinstitute
+      \end{beamercolorbox}
+      \begin{beamercolorbox}[sep = 5pt, wd = \paperwidth]{date}
+        \usebeamerfont{author}\centering\scriptsize\insertdate
+      \end{beamercolorbox}\vskip0.5em
+    \endgroup
+    \vfill
+  \fi
+}
+
+% ----
+% FINAL PAGE
+% ----
+\newcommand{\wider}[2][3em]{%
+  \makebox[\linewidth][c]{%
+    \begin{minipage}{\dimexpr\textwidth+#1\relax}
+      \raggedright#2
+    \end{minipage}%
+  }%
+}
+
+\setbeamertemplate{finalpage}{
+
+  \begin{tikzpicture}
+    \def\squaresize{0.52}
+    \def\halfsquare{0.5*\squaresize}
+    \useasboundingbox[] (0, 0) rectangle(\the\paperwidth, \the\paperheight);
+    \fill[color = nmbugreen] (-1, 0) rectangle (1\paperwidth, 1\paperheight);
+    
+    \node[anchor = north east] (logo) at (0.81\paperwidth, .83\paperheight) {\includegraphics[scale = 0.5]{gfx/nmbu_symbol_wh.eps}};
+    
+    \node[white,align=center,font=\huge] at (0.425\paperwidth, 0.6\paperheight) {\textbf{Thank you}};
+    
+    \foreach \x in {0,1,2,...,17} { % Remember to change if changing aspect ratio
+      \def\xs{\x *\squaresize +\x *\halfsquare}
+      \foreach \y in {0,1,2} {
+        \def\ys{\y *\squaresize +\y *\halfsquare +1}
+        \draw[white,line width=0.3mm] (\xs,\ys) -- (\xs +\squaresize,\ys) -- (\xs
+        +\squaresize,\ys +\squaresize) -- (\xs,\ys +\squaresize) --cycle;
+        \draw[white,line width=0.3mm] (\xs +\halfsquare,\ys
+        +\halfsquare) -- (\xs +\squaresize +\halfsquare,\ys +\halfsquare) -- (\xs
+        +\squaresize +\halfsquare,\ys +\squaresize +\halfsquare) --
+        (\xs +\halfsquare,\ys +\squaresize +\halfsquare) -- cycle;
+      }
+    }
+  \end{tikzpicture}
+}
+
+\mode<all>
+
+

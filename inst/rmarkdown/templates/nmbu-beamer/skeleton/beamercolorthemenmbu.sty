@@ -1,0 +1,60 @@
+% NMBU Color Scheme
+%
+% Description:
+%   A color theme consistent with NMBU's graphical profile.
+%
+% URL: https://design.nmbu.no/artikler/node/2970
+%
+% Author: Erlend Dancke Sandorf
+%
+% Based on: Beamer-NMBU by Eivysaur (https://github.com/Eivysaur/Beamer-NMBU) 
+%
+\mode<presentation>
+
+% NMBU Primary colors 
+\definecolor{nmbugreen}{RGB}{0, 154, 129}
+\definecolor{nmbulightgreen}{RGB}{209, 232, 223}
+\definecolor{nmbublack}{RGB}{0, 0, 0}
+\definecolor{nmbugrey}{RGB}{230, 230, 230}
+
+% NMBU Secondary colors
+\definecolor{nmbublue}{RGB}{0, 169, 213}
+\definecolor{nmbulightblue}{RGB}{201, 232, 239}
+
+\definecolor{nmbuyellow}{RGB}{255, 210, 68}
+\definecolor{nmbulightyellow}{RGB}{255, 240, 198}
+
+\definecolor{nmbured}{RGB}{231,82,68}
+\definecolor{nmbulightred}{RGB}{252,227,219}
+
+\definecolor{nmbuearthblue}{RGB}{85, 102, 128}
+\definecolor{nmbulightearthblue}{RGB}{216, 230, 240}
+
+\definecolor{nmbuearthbrown}{RGB}{119, 100, 90}
+\definecolor{nmbulightearthbrown}{RGB}{229, 223, 220}
+
+\definecolor{nmbupurple}{RGB}{128, 74, 90}
+\definecolor{nmbulightpurple}{RGB}{236, 224, 230}
+
+% Set theme colors
+\setbeamercolor*{title page header}{fg = white}
+\setbeamercolor*{author}{fg = white}
+\setbeamercolor*{institute}{fg = white}
+\setbeamercolor*{date}{fg = white}
+\setbeamercolor*{frametitle}{fg = nmbugreen}
+\setbeamercolor*{normal text}{fg = nmbublack}
+\setbeamercolor*{caption name}{fg = nmbugreen}
+\setbeamercolor*{itemize item}{fg = nmbugreen}
+\setbeamercolor*{itemize subitem}{fg = nmbulightgreen}
+\setbeamercolor*{itemize subsubitem}{fg = nmbulightgreen}
+
+\setbeamercolor*{block title}{fg = white, bg = nmbugreen}
+\setbeamercolor*{block body}{parent = normal text, bg = nmbulightgreen, fg = nmbublack}
+
+\setbeamercolor*{block title example}{fg = white, bg = nmbuearthblue}
+\setbeamercolor*{block body example}{parent = normal text, bg = nmbulightearthblue, fg = nmbublack}
+
+\setbeamercolor*{block title alerted}{fg = white, bg = nmbured}
+\setbeamercolor*{block body alerted}{parent = normal text, bg = nmbulightred, fg = nmbublack}
+
+\mode<all>

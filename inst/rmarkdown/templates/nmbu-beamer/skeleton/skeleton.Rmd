@@ -1,0 +1,92 @@
+---
+title: The presentation title
+subtitle: An optional subtitle
+author: 
+  - Erlend Dancke Sandorf$^\text{a}$
+institute: 
+  - $^\text{a}$School of Economics and Business, Norwegian University of Life Sciences
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: "nmbu"
+    latex_engine: xelatex
+    dev: cairo_pdf
+    highlight: tango
+    keep_tex: false
+    slide_level: 2
+classoption: "aspectratio = 169"
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##
+\titlepage
+
+## Create a function that can add two numbers together
+
+```{r, eval = FALSE, echo = TRUE}
+add <- function(x, y) {
+  return(x + y)
+}
+```
+
+## The simple MNL model
+$$
+  \Pr(i_{nit}|\beta) = \frac{\exp(\beta X_{nit})}{\sum_{j=1}^{J}\exp(\beta X_{njt})}
+$$
+where
+
+- $\beta$ is a vector of parameters to be estimated
+- $X_{nit}$ the levels of the attributes
+
+## A slide with a block
+\begin{block}{A standard block}
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+\end{block}
+
+\begin{exampleblock}{An example block}
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+\end{exampleblock}
+
+\begin{alertblock}{An alert block}
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+\end{alertblock}
+
+## Slide with Bullets
+
+- Bullet 1
+  - Bullet 2
+    - Bullet 3
+
+
+## A two-column layout
+\begin{columns}
+  % First column
+  \column{0.75\textwidth}
+    ```{r out.width="75%"}
+      library(ggplot2)
+      ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
+        geom_point(aes(color = Species), show.legend = FALSE)
+```
+  
+  % Second column
+  \column{0.25\textwidth}
+  A graph 
+\end{columns}
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+##
+\usebeamertemplate{finalpage}
