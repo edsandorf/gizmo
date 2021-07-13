@@ -1,0 +1,37 @@
+---
+title: false
+header_title: Header title
+author: "Erlend Dancke Sandorf"
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+output:
+  pdf_document:
+    number_sections: true
+    toc: false
+    keep_tex: true
+    template: nmbu-document-template.tex
+bibliography: bibliography.bib
+csl: elsevier-harvard.csl
+link-citations: true
+geometry: "a4paper, left = 3cm, right=3cm, top = 2cm, bottom = 2cm, includehead = true, includefoot = true, head = 36pt"
+---
+
+# Introduction
+
+The conditional logit model [@mcfadden_conditional_1974].
+$$
+P_{nis} = \frac{\exp(\beta X_{nis})}{\sum_{j \in C}\exp(\beta X_{njs})}
+$$
+
+Two different ways of in-text citation: McFadden [-@mcfadden_conditional_1974] or @mcfadden_conditional_1974. Can also include multiple citations [@mcfadden_conditional_1974; @mcfadden_mixed_2000].
+
+`r paste(stringi::stri_rand_lipsum(3), collapse = "\n\n")`
+
+## Progress
+
+`r paste(stringi::stri_rand_lipsum(3, start_lipsum = FALSE), collapse = "\n\n")`
+
+### Future Directions
+
+`r paste(stringi::stri_rand_lipsum(3, start_lipsum = FALSE), collapse = "\n\n")`
+
+# References
